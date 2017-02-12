@@ -1,0 +1,1581 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>Animation Experiment 0.0.1 | Documentation</title>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <link href='assets/bass.css' type='text/css' rel='stylesheet' />
+  <link href='assets/style.css' type='text/css' rel='stylesheet' />
+  <link href='assets/github.css' type='text/css' rel='stylesheet' />
+</head>
+<body class='documentation'>
+  <div class='max-width-4 mx-auto'>
+    <div class='clearfix md-mxn2'>
+      <div class='fixed xs-hide fix-3 overflow-auto max-height-100'>
+        <div class='py1 px2'>
+          <h3 class='mb0 no-anchor'>Animation Experiment</h3>
+          <div class='mb1'><code>0.0.1</code></div>
+          <input
+            placeholder='Filter'
+            id='filter-input'
+            class='col12 block input'
+            type='text' />
+          <div id='toc'>
+            <ul class='list-reset h5 py1-ul'>
+              
+                
+                <li><a
+                  href='#animator'
+                  class=" toggle-sibling">
+                  Animator
+                  <span class='icon'>▸</span>
+                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  
+                    <ul class='list-reset py1-ul pl1'>
+                      <li class='h5'><span>Instance members</span></li>
+                      
+                      <li><a
+                        href='#Animator#constructor'
+                        class='regular pre-open'>
+                        #constructor
+                      </a></li>
+                      
+                      <li><a
+                        href='#Animator#progress'
+                        class='regular pre-open'>
+                        #progress
+                      </a></li>
+                      
+                      <li><a
+                        href='#Animator#playState'
+                        class='regular pre-open'>
+                        #playState
+                      </a></li>
+                      
+                      <li><a
+                        href='#Animator#isReversed'
+                        class='regular pre-open'>
+                        #isReversed
+                      </a></li>
+                      
+                      <li><a
+                        href='#Animator#currentTime'
+                        class='regular pre-open'>
+                        #currentTime
+                      </a></li>
+                      
+                      <li><a
+                        href='#Animator#duration'
+                        class='regular pre-open'>
+                        #duration
+                      </a></li>
+                      
+                      <li><a
+                        href='#Animator#currentState'
+                        class='regular pre-open'>
+                        #currentState
+                      </a></li>
+                      
+                      <li><a
+                        href='#Animator#play'
+                        class='regular pre-open'>
+                        #play
+                      </a></li>
+                      
+                      <li><a
+                        href='#Animator#pause'
+                        class='regular pre-open'>
+                        #pause
+                      </a></li>
+                      
+                      <li><a
+                        href='#Animator#stop'
+                        class='regular pre-open'>
+                        #stop
+                      </a></li>
+                      
+                      <li><a
+                        href='#Animator#continue'
+                        class='regular pre-open'>
+                        #continue
+                      </a></li>
+                      
+                      <li><a
+                        href='#Animator#on'
+                        class='regular pre-open'>
+                        #on
+                      </a></li>
+                      
+                      <li><a
+                        href='#Animator#off'
+                        class='regular pre-open'>
+                        #off
+                      </a></li>
+                      
+                    </ul>
+                  
+                  
+                </div>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#timingparameters'
+                  class="">
+                  TimingParameters
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#timingfunction'
+                  class="">
+                  TimingFunction
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#animationevent'
+                  class="">
+                  AnimationEvent
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#animationpropertylist'
+                  class="">
+                  AnimationPropertyList
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#length'
+                  class="">
+                  Length
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#angle'
+                  class="">
+                  Angle
+                  
+                </a>
+                
+                </li>
+              
+            </ul>
+          </div>
+          <div class='mt1 h6 quiet'>
+            <a href='http://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
+          </div>
+        </div>
+      </div>
+      <div class='fix-margin-3'>
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='animator'>
+      Animator
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>An Animator allows you to animate changes to the css properties of one or more DOM Elements.
+You can control the rate of playback using timing parameters, or create an interactive animation
+by scrubbing through the property values manually.</p>
+
+
+  <div class='pre p1 fill-light mt0'>new Animator()</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='Animator#constructor'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>new constructor(target, props, timingParameters = {})</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  
+
+  <div class='pre p1 fill-light mt0'>new constructor(target: (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTMLElement</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/API/NodeList">NodeList</a>), props: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, timingParameters: <a href="#timingparameters">TimingParameters</a>?)</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>target</span> <code class='quiet'>((<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTMLElement</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/API/NodeList">NodeList</a>))</code>
+	    The Element or NodeList being animated.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>props</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    The start and end values for the css properties being animated.
+
+          </div>
+          
+          <table class='mt1 mb2 fixed-table h5 col-12'>
+            <colgroup>
+              <col width='30%' />
+              <col width='70%' />
+            </colgroup>
+            <thead>
+              <tr class='bold fill-light'>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody class='mt1'>
+              
+                <tr>
+                  <td class='break-word'><span class='code bold'>props.to</span> <code class='quiet'><a href="#animationpropertylist">AnimationPropertyList</a></code>
+                  </td>
+                  <td class='break-word'><span>The start state of the animation.
+</span></td>
+                </tr>
+              
+                <tr>
+                  <td class='break-word'><span class='code bold'>props.from</span> <code class='quiet'><a href="#animationpropertylist">AnimationPropertyList</a></code>
+                  </td>
+                  <td class='break-word'><span>The end state of the animation.
+</span></td>
+                </tr>
+              
+            </tbody>
+          </table>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>timingParameters</span> <code class='quiet'>(<a href="#timingparameters">TimingParameters</a>?
+            = <code>{}</code>)</code>
+	    Playback and timing options.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">var</span> animator = <span class="hljs-keyword">new</span> Animator(box, {
+     <span class="hljs-attr">from</span>: { <span class="hljs-attr">translateX</span>: <span class="hljs-number">0</span>,   <span class="hljs-attr">rotate</span>: <span class="hljs-number">0</span>   },
+     <span class="hljs-attr">to</span>:   { <span class="hljs-attr">translateX</span>: <span class="hljs-number">100</span>, <span class="hljs-attr">rotate</span>: <span class="hljs-number">360</span> }
+}, {
+     <span class="hljs-attr">easing</span>: <span class="hljs-string">'spring'</span>,
+     <span class="hljs-attr">stiffness</span>: <span class="hljs-number">100</span>,
+     <span class="hljs-attr">damping</span>: <span class="hljs-number">20</span>
+});</pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Animator#progress'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>progress</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>The value of this property (between 0.0 and 1.0) represents the progress of the Animator between its start
+and end states. The value is independent of time. For example, if an "ease-out" timing function is used,
+the value may increase more quickly at the start of an animation and slow down as it reaches its end.
+In some cases, the value may be less than 0.0 or greater than 1.0. When using spring physics, a property
+may overshoot its target value and oscillate before settling at an equilibirum position. Changing the
+value of this property interrupts the Animator and moves it to the "stopped" state.</p>
+
+
+  <div class='pre p1 fill-light mt0'>progress</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-built_in">console</span>.log(animator.progress) <span class="hljs-comment">// read</span>
+animator.progress = <span class="hljs-number">0.5</span>;       <span class="hljs-comment">// write</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Animator#playState'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>playState</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>The current play state of the Animator (Read Only). An Animator is "idle" when it is first created before any
+commands have been sent. After the "play" method is first called, it is in the "running" state when playing
+and in the "paused" state when paused. When an animation reaches its target value the Animator is in the
+"finished" state. If the stop method is called, the Animator is in the "stopped" state.</p>
+
+
+  <div class='pre p1 fill-light mt0'>playState</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-built_in">console</span>.log(animator.playState); <span class="hljs-comment">// e.g. 'running'</span>
+animator.playState = <span class="hljs-string">'paused'</span>;   <span class="hljs-comment">// NO EFFECT! - READ ONLY</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Animator#isReversed'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>isReversed</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>If true, the Animator is animating in reverse, back towards its original values.</p>
+
+
+  <div class='pre p1 fill-light mt0'>isReversed</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-built_in">console</span>.log(animator.isReversed); <span class="hljs-comment">// e.g. false</span>
+animator.isReversed = <span class="hljs-literal">true</span>;       <span class="hljs-comment">// play backwards</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Animator#currentTime'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>currentTime</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>A number representing the current time of the running animation in milliseconds or null or
+if the Animator is in the "stopped" state.</p>
+
+
+  <div class='pre p1 fill-light mt0'>currentTime</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-built_in">console</span>.log(animator.currentTime); <span class="hljs-comment">// e.g. 300</span>
+animator.currentTime = <span class="hljs-number">400</span>;        <span class="hljs-comment">// seek to timestamp</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Animator#duration'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>duration</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>A number (Read Only) representing the duration of the Animator's main timeline
+in milliseconds.</p>
+
+
+  <div class='pre p1 fill-light mt0'>duration</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-built_in">console</span>.log(animator.duration); <span class="hljs-comment">// e.g. 300</span>
+animator.duration = <span class="hljs-number">400</span>;        <span class="hljs-comment">// NO EFFECT - READ ONLY</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Animator#currentState'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>currentState</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>An object (Read Only) with the current value of each css property being animated.</p>
+
+
+  <div class='pre p1 fill-light mt0'>currentState</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-built_in">console</span>.log(animator.currentState); <span class="hljs-comment">// e.g. { translateX: 300, translateY: 50 }</span>
+animator.currentState = {};         <span class="hljs-comment">// NO EFFECT - READ ONLY</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Animator#play'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>play()</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Resume playback of the animation.</p>
+
+
+  <div class='pre p1 fill-light mt0'>play(): <a href="#animator">Animator</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#animator">Animator</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Animator#pause'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>pause()</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Pause playback of the animation.</p>
+
+
+  <div class='pre p1 fill-light mt0'>pause(): <a href="#animator">Animator</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#animator">Animator</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Animator#stop'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>stop()</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Stop playback of the animation and remove its timeline. The Animator will need to be
+re-configured by calling "continue" in order for playback to be resumed.</p>
+
+
+  <div class='pre p1 fill-light mt0'>stop(): <a href="#animator">Animator</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#animator">Animator</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Animator#continue'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>continue(timingParameters = {})</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Stop the animation and temporarily create a new one that proceeds in the same
+direction (based on the current value of "isReversed"). Useful if you need to
+interrupt an animation (For example during a user gesture), and send the target
+element towards the start or end state with a different set of timing parameters.
+When the new animation reaches its "finished" state, control is returned to the
+main timeline.</p>
+
+
+  <div class='pre p1 fill-light mt0'>continue(timingParameters: <a href="#timingparameters">TimingParameters</a>?): <a href="#animator">Animator</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>timingParameters</span> <code class='quiet'>(<a href="#timingparameters">TimingParameters</a>?
+            = <code>{}</code>)</code>
+	    Playback and timing options.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#animator">Animator</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>animator.continue({
+     <span class="hljs-attr">easing</span>: <span class="hljs-string">'spring'</span>,
+     <span class="hljs-attr">stiffness</span>: <span class="hljs-number">100</span>,
+     <span class="hljs-attr">damping</span>: <span class="hljs-number">20</span>
+});</pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Animator#on'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>on(label, callback)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Add an event listener to the Animator.</p>
+
+
+  <div class='pre p1 fill-light mt0'>on(label: <a href="#animationevent">AnimationEvent</a>, callback: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="#animator">Animator</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>label</span> <code class='quiet'>(<a href="#animationevent">AnimationEvent</a>)</code>
+	    The type of event to listen for.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code>
+	    A callback function.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#animator">Animator</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>animator.on(<span class="hljs-string">'finish'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">progress</span>) </span>{
+     <span class="hljs-keyword">if</span> (progress === <span class="hljs-number">1</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'finished.'</span>);
+     <span class="hljs-keyword">if</span> (progress === <span class="hljs-number">0</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'finished in reverse.'</span>);
+});</pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Animator#off'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>off(label, callback)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Remove an event listener from the Animator.</p>
+
+
+  <div class='pre p1 fill-light mt0'>off(label: <a href="#animationevent">AnimationEvent</a>, callback: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="#animator">Animator</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>label</span> <code class='quiet'>(<a href="#animationevent">AnimationEvent</a>)</code>
+	    The type of event to listen for.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code>
+	    A reference to the callback function to be removed.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#animator">Animator</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='timingparameters'>
+      TimingParameters
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Timing parameters for an animation.</p>
+
+
+  <div class='pre p1 fill-light mt0'>TimingParameters</div>
+  
+    <p>
+      Type:
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Properties</div>
+    <div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>easing</span> <code class='quiet'>(<a href="#timingfunction">TimingFunction</a>?)</code>
+          : The timing function to apply.
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>duration</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>?)</code>
+          : The duration for the animation. (Ignored if easing is set to 'spring').
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>stiffness</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>?)</code>
+          : The stiffness (spring constant) of the spring.
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>damping</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>?)</code>
+          : The damping (frictional force) applied to the spring.
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>velocity</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>?)</code>
+          : The initial velocity of the spring.
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>mass</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>?)</code>
+          : The mass of the spring.
+
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='timingfunction'>
+      TimingFunction
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>A timing function: "linear" | "ease" | "ease-in" | "ease-out" | "ease-in-out" | "spring"</p>
+
+
+  <div class='pre p1 fill-light mt0'>TimingFunction</div>
+  
+    <p>
+      Type:
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='animationevent'>
+      AnimationEvent
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>An event fired by an Animator: "play" | "pause" | "finish"</p>
+
+
+  <div class='pre p1 fill-light mt0'>AnimationEvent</div>
+  
+    <p>
+      Type:
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='animationpropertylist'>
+      AnimationPropertyList
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>A set of css properties and their values, defining a state or key frame of an animation.</p>
+
+
+  <div class='pre p1 fill-light mt0'>AnimationPropertyList</div>
+  
+    <p>
+      Type:
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Properties</div>
+    <div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>translateX</span> <code class='quiet'>(<a href="#length">Length</a>?)</code>
+          : translateX.
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>translateY</span> <code class='quiet'>(<a href="#length">Length</a>?)</code>
+          : translateY.
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>translateZ</span> <code class='quiet'>(<a href="#length">Length</a>?)</code>
+          : translateZ.
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>scale</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>?)</code>
+          : A shorthand for scaleX and scaleY. Ignored if another scale-related property
+is specified.
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>scaleX</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>?)</code>
+          : scaleX.
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>scaleY</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>?)</code>
+          : scaleY.
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>opacity</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>?)</code>
+          : opacity.
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>rotate</span> <code class='quiet'>(<a href="#angle">Angle</a>?)</code>
+          : A shorthand for rotateZ. Ignored if another rotation-related property is specified.
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>rotateX</span> <code class='quiet'>(<a href="#angle">Angle</a>?)</code>
+          : rotateX.
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>rotateY</span> <code class='quiet'>(<a href="#angle">Angle</a>?)</code>
+          : rotateY.
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>rotateZ</span> <code class='quiet'>(<a href="#angle">Angle</a>?)</code>
+          : rotateZ.
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>skew</span> <code class='quiet'>(<a href="#angle">Angle</a>?)</code>
+          : A shorthand for skewX. Ignored if another skew-related property is specified.
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>skewX</span> <code class='quiet'>(<a href="#angle">Angle</a>?)</code>
+          : skewX.
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>skewY</span> <code class='quiet'>(<a href="#angle">Angle</a>?)</code>
+          : skewY.
+
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='length'>
+      Length
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>A Length is a data type available to certain animatable css properties. It can be specified as a number (of pixels) or
+a percentage. If no units are specified, px will be assumed.</p>
+
+
+  <div class='pre p1 fill-light mt0'>Length</div>
+  
+    <p>
+      Type:
+      (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>...
+{
+     <span class="hljs-attr">translateY</span>: <span class="hljs-string">'50%'</span>,
+     <span class="hljs-attr">translateZ</span>: <span class="hljs-number">100</span>
+ }
+...</pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='angle'>
+      Angle
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>An Angle is a data type available to certain animatable css properties. It can be specified as a number (of degrees),
+or in radians (e.g. '3.14rad').</p>
+
+
+  <div class='pre p1 fill-light mt0'>Angle</div>
+  
+    <p>
+      Type:
+      (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>...
+{
+     <span class="hljs-attr">rotate</span>: <span class="hljs-number">360</span>,
+     <span class="hljs-attr">skewX</span>: <span class="hljs-string">'2rad'</span>
+}
+...</pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+      </div>
+    </div>
+  </div>
+  <script src='assets/anchor.js'></script>
+  <script src='assets/site.js'></script>
+</body>
+</html>
